@@ -30,12 +30,7 @@ export const ItemList = props => (
   <List {...props}>
     <Datagrid>
       <TextField source="id" />
-      <DateField source="createdate" options={{ disabled: true }} />
-      <DateField source="lastupdate" options={{ disabled: true }} />
       <TextField source="name" />
-      <RichTextField source="content" />
-      <RichTextField source="question" />
-      <NumberField source="confidence" />
       <ShowButton label="View" />
       <EditButton label="Edit" />
       <DeleteButton label="Delete" redirect={false} />
@@ -51,16 +46,16 @@ export const ItemShow = props => (
       <DateField source="lastupdate" options={{ disabled: true }} />
       <TextField source="name" />
       <RichTextField source="content" />
-      <RichTextField source="question" />
+      <TextField source="question" />
       <NumberField source="confidence" />
       <ArrayField source="correct_answers">
         <Datagrid>
-          <RichTextField source="correct_answer" />
+          <TextField source="correct_answer" />
         </Datagrid>
       </ArrayField>
       <ArrayField source="incorrect_answers">
         <Datagrid>
-          <RichTextField source="incorrect_answer" />
+          <TextField source="incorrect_answer" />
         </Datagrid>
       </ArrayField>
     </SimpleShowLayout>
@@ -72,16 +67,16 @@ export const ItemCreate = props => (
     <SimpleForm>
       <TextInput source="name" />
       <RichTextInput source="content" />
-      <RichTextInput source="question" />
+      <TextInput source="question" />
       <NumberInput source="confidence" min={0} max={1} />
       <ArrayInput source="correct_answers">
         <SimpleFormIterator>
-          <RichTextInput source="correct_answer" />
+          <TextInput source="correct_answer" />
         </SimpleFormIterator>
       </ArrayInput>
       <ArrayInput source="incorrect_answers">
         <SimpleFormIterator>
-          <RichTextInput source="incorrect_answer" />
+          <TextInput source="incorrect_answer" />
         </SimpleFormIterator>
       </ArrayInput>
     </SimpleForm>
@@ -93,16 +88,16 @@ export const ItemEdit = props => (
     <SimpleForm>
       <TextInput source="name" />
       <RichTextInput source="content" />
-      <RichTextInput source="question" />
+      <TextInput source="question" />
       <NumberInput source="confidence" min={0} max={1} />
       <ArrayInput source="correct_answers">
         <SimpleFormIterator>
-          <RichTextInput source="correct_answer" />
+          <TextInput source="correct_answer" />
         </SimpleFormIterator>
       </ArrayInput>
       <ArrayInput source="incorrect_answers">
         <SimpleFormIterator>
-          <RichTextInput source="incorrect_answer" />
+          <TextInput source="incorrect_answer" />
         </SimpleFormIterator>
       </ArrayInput>
     </SimpleForm>

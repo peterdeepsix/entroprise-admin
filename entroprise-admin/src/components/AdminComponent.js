@@ -20,6 +20,8 @@ import {
 import CommentOutlinedIcon from "@material-ui/icons/CommentOutlined"
 import FeaturedPlayListOutlinedIcon from "@material-ui/icons/FeaturedPlayListOutlined"
 
+import customTheme from "../components/theme"
+
 const config = {
   apiKey: "AIzaSyBWp-Akak-fGxdpjaUvInSOCpMck_16SAA",
   authDomain: "entroprise-production.firebaseapp.com",
@@ -41,6 +43,7 @@ const authProvider = FirebaseAuthProvider(config, options)
 
 const AdminComponent = () => (
   <Admin
+    theme={customTheme}
     loginPage={CustomLoginPage}
     dataProvider={dataProvider}
     authProvider={authProvider}
