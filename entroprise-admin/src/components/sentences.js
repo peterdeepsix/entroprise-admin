@@ -26,9 +26,9 @@ export const SentenceList = props => (
     <Datagrid>
       <TextField source="title" />
       <RichTextField source="body" />
-      <ShowButton label="" />
-      <EditButton label="" />
-      <DeleteButton label="" redirect={false} />
+      <ShowButton label="View" />
+      <EditButton label="Edit" />
+      <DeleteButton label="Delete" redirect={false} />
     </Datagrid>
   </List>
 )
