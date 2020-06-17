@@ -7,7 +7,7 @@ const customTheme = createMuiTheme({
   palette: {
     primary: indigo,
     secondary: indigo,
-    error: indigo,
+    error: red,
     contrastThreshold: 3,
     tonalOffset: 0.2,
   },
@@ -28,8 +28,6 @@ const customTheme = createMuiTheme({
     MuiButton: {
       // override the styles of all instances of this component
       root: {
-        // Name of the rule
-        color: "white", // Some CSS
         textTransform: "none",
       },
     },

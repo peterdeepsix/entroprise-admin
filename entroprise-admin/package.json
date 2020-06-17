@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "entroprise-admin",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Entroprise Admin Portal",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Peter Arnold <peter@entroprise.com>",
   "dependencies": {
     "@loadable/component": "^5.12.0",
     "firebase": "^7.15.1",

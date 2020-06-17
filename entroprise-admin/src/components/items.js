@@ -29,7 +29,6 @@ import RichTextInput from "ra-input-rich-text"
 export const ItemList = props => (
   <List {...props}>
     <Datagrid>
-      <TextField source="id" />
       <TextField source="name" />
       <ShowButton label="View" />
       <EditButton label="Edit" />
@@ -42,6 +41,7 @@ export const ItemShow = props => (
   <Show {...props}>
     <SimpleShowLayout>
       <TextField source="id" />
+      <TextField source="item_id" />
       <DateField source="createdate" options={{ disabled: true }} />
       <DateField source="lastupdate" options={{ disabled: true }} />
       <TextField source="name" />
@@ -65,6 +65,7 @@ export const ItemShow = props => (
 export const ItemCreate = props => (
   <Create {...props}>
     <SimpleForm>
+      <TextInput source="item_id" />
       <TextInput source="name" />
       <RichTextInput source="content" />
       <TextInput source="question" />
@@ -85,9 +86,13 @@ export const ItemCreate = props => (
 
 export const ItemEdit = props => (
   <Edit {...props}>
-    <SimpleForm>
+    <SimpleForm warnWhenUnsavedChanges redirect={false}>
+      <TextInput source="id" options={{ disabled: true }} />
+      <TextInput source="item_id" options={{ disabled: true }} />
+      <DateInput source="createdate" options={{ disabled: true }} />
+      <DateInput source="lastupdate" options={{ disabled: true }} />
       <TextInput source="name" />
-      <RichTextInput source="content" />
+      <RichTextInput label="" source="content" />
       <TextInput source="question" />
       <NumberInput source="confidence" min={0} max={1} />
       <ArrayInput source="correct_answers">
@@ -95,7 +100,7 @@ export const ItemEdit = props => (
           <TextInput source="correct_answer" />
         </SimpleFormIterator>
       </ArrayInput>
-      <ArrayInput source="incorrect_answers">
+      <ArrayInput label="Incorrect Answers" source="incorrect_answers">
         <SimpleFormIterator>
           <TextInput source="incorrect_answer" />
         </SimpleFormIterator>

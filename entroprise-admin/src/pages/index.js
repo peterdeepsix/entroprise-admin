@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const AdminComponent = Loadable(() => import("../components/AdminComponent"), {
-  fallback: <p>Loading AdminComponent ...</p>,
+  fallback: <></>,
 })
 
 const IndexPage = () => (

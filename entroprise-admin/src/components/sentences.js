@@ -25,7 +25,6 @@ export const SentenceList = props => (
   <List {...props}>
     <Datagrid>
       <TextField source="title" />
-      <RichTextField source="body" />
       <ShowButton label="View" />
       <EditButton label="Edit" />
       <DeleteButton label="Delete" redirect={false} />
@@ -64,7 +63,7 @@ export const SentenceCreate = props => (
 
 export const SentenceEdit = props => (
   <Edit {...props}>
-    <SimpleForm>
+    <SimpleForm warnWhenUnsavedChanges edirect={false}>
       <TextInput source="id" options={{ disabled: true }} />
       <DateInput source="createdate" options={{ disabled: true }} />
       <DateInput source="lastupdate" options={{ disabled: true }} />

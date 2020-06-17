@@ -35,7 +35,7 @@ const config = {
 
 const options = {
   logging: true,
-  rootRef: "root/items",
+  rootRef: "root_collection/root_document",
 }
 
 const dataProvider = FirebaseDataProvider(config, options)
@@ -49,20 +49,20 @@ const AdminComponent = () => (
     authProvider={authProvider}
   >
     <Resource
-      name="sentences"
-      icon={CommentOutlinedIcon}
-      list={SentenceList}
-      show={SentenceShow}
-      create={SentenceCreate}
-      edit={SentenceEdit}
-    />
-    <Resource
       name="items"
       icon={FeaturedPlayListOutlinedIcon}
       list={ItemList}
       show={ItemShow}
       create={ItemCreate}
       edit={ItemEdit}
+    />
+    <Resource
+      name="sentences"
+      icon={CommentOutlinedIcon}
+      list={SentenceList}
+      show={SentenceShow}
+      create={SentenceCreate}
+      edit={SentenceEdit}
     />
   </Admin>
 )
