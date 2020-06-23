@@ -26,10 +26,10 @@ import {
 } from "react-admin"
 import RichTextInput from "ra-input-rich-text"
 
-export const ItemList = props => (
+export const QuestionList = props => (
   <List {...props}>
     <Datagrid>
-      <TextField source="name" />
+      <TextField source="question" />
       <ShowButton label="View" />
       <EditButton label="Edit" />
       <DeleteButton label="Delete" redirect={false} />
@@ -37,13 +37,13 @@ export const ItemList = props => (
   </List>
 )
 
-export const ItemShow = props => (
+export const QuestionShow = props => (
   <Show {...props}>
     <SimpleShowLayout>
       <TextField source="id" />
-      <TextField source="item_id" />
-      <DateField source="createdate" options={{ disabled: true }} />
-      <DateField source="lastupdate" options={{ disabled: true }} />
+      <TextField source="question" />
+      {/* <DateField source="created_at" options={{ disabled: true }} />
+      <DateField source="updated_at" options={{ disabled: true }} />
       <TextField source="name" />
       <RichTextField source="content" />
       <TextField source="question" />
@@ -57,17 +57,16 @@ export const ItemShow = props => (
         <Datagrid>
           <TextField source="incorrect_answer" />
         </Datagrid>
-      </ArrayField>
+      </ArrayField> */}
     </SimpleShowLayout>
   </Show>
 )
 
-export const ItemCreate = props => (
+export const QuestionCreate = props => (
   <Create {...props}>
     <SimpleForm>
-      <TextInput source="item_id" />
-      <TextInput source="name" />
-      <RichTextInput source="content" />
+      <TextInput source="question" />
+      {/* <RichTextInput source="content" />
       <TextInput source="question" />
       <NumberInput source="confidence" min={0} max={1} />
       <ArrayInput source="correct_answers">
@@ -79,18 +78,18 @@ export const ItemCreate = props => (
         <SimpleFormIterator>
           <TextInput source="incorrect_answer" />
         </SimpleFormIterator>
-      </ArrayInput>
+      </ArrayInput> */}
     </SimpleForm>
   </Create>
 )
 
-export const ItemEdit = props => (
+export const QuestionEdit = props => (
   <Edit {...props}>
     <SimpleForm warnWhenUnsavedChanges redirect={false}>
       <TextInput source="id" options={{ disabled: true }} />
-      <TextInput source="item_id" options={{ disabled: true }} />
-      <DateInput source="createdate" options={{ disabled: true }} />
-      <DateInput source="lastupdate" options={{ disabled: true }} />
+      <TextInput source="question" />
+      {/* <DateInput source="created_at" options={{ disabled: true }} />
+      <DateInput source="updated_at" options={{ disabled: true }} />
       <TextInput source="name" />
       <RichTextInput label="" source="content" />
       <TextInput source="question" />
@@ -104,7 +103,7 @@ export const ItemEdit = props => (
         <SimpleFormIterator>
           <TextInput source="incorrect_answer" />
         </SimpleFormIterator>
-      </ArrayInput>
+      </ArrayInput> */}
     </SimpleForm>
   </Edit>
 )

@@ -4,13 +4,13 @@ import { Admin, Resource } from "react-admin"
 import CustomLoginPage from "./CustomLoginPage"
 
 import {
-  SentenceList,
-  SentenceShow,
-  SentenceCreate,
-  SentenceEdit,
-} from "./sentences"
+  QuestionList,
+  QuestionShow,
+  QuestionCreate,
+  QuestionEdit,
+} from "./questions"
 
-import { ItemList, ItemShow, ItemCreate, ItemEdit } from "../components/items"
+import hasuraDataProvider from "ra-data-hasura"
 
 import {
   FirebaseAuthProvider,
@@ -38,7 +38,12 @@ const options = {
   rootRef: "root_collection/root_document",
 }
 
-const dataProvider = FirebaseDataProvider(config, options)
+const headers = {
+  "content-type": "application/json",
+  "x-hasura-admin-secret": "supersecret",
+}
+
+const dataProvider = hasuraDataProvider("https://entroprise.app", headers)
 const authProvider = FirebaseAuthProvider(config, options)
 
 const AdminComponent = () => (
@@ -49,20 +54,12 @@ const AdminComponent = () => (
     authProvider={authProvider}
   >
     <Resource
-      name="items"
+      name="questions"
       icon={FeaturedPlayListOutlinedIcon}
-      list={ItemList}
-      show={ItemShow}
-      create={ItemCreate}
-      edit={ItemEdit}
-    />
-    <Resource
-      name="sentences"
-      icon={CommentOutlinedIcon}
-      list={SentenceList}
-      show={SentenceShow}
-      create={SentenceCreate}
-      edit={SentenceEdit}
+      list={QuestionList}
+      show={QuestionShow}
+      create={QuestionCreate}
+      edit={QuestionEdit}
     />
   </Admin>
 )
