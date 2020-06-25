@@ -9,11 +9,7 @@ const CustomLoginForm = props => (
 )
 
 const CustomLoginPage = props => (
-  <Login
-    backgroundImage="https://source.unsplash.com/random/1600x900/daily"
-    loginForm={<CustomLoginForm />}
-    {...props}
-  />
+  <Login loginForm={<CustomLoginForm />} {...props} />
 )
 
 export default CustomLoginPage

@@ -1,6 +1,14 @@
 import React from "react"
 
 import { Admin, Resource } from "react-admin"
+
+import {
+  FirebaseAuthProvider,
+  FirebaseDataProvider,
+} from "react-admin-firebase"
+
+import hasuraDataProvider from "ra-data-hasura"
+
 import CustomLoginPage from "./CustomLoginPage"
 
 import {
@@ -8,17 +16,20 @@ import {
   QuestionShow,
   QuestionCreate,
   QuestionEdit,
-} from "./questions"
+} from "./question"
 
-import hasuraDataProvider from "ra-data-hasura"
+import { AnswerList, AnswerShow, AnswerCreate, AnswerEdit } from "./answer"
 
 import {
-  FirebaseAuthProvider,
-  FirebaseDataProvider,
-} from "react-admin-firebase"
+  CollectionList,
+  CollectionShow,
+  CollectionCreate,
+  CollectionEdit,
+} from "./collection"
 
-import CommentOutlinedIcon from "@material-ui/icons/CommentOutlined"
 import FeaturedPlayListOutlinedIcon from "@material-ui/icons/FeaturedPlayListOutlined"
+import LibraryBooksOutlinedIcon from "@material-ui/icons/LibraryBooksOutlined"
+import RemoveFromQueueOutlinedIcon from "@material-ui/icons/RemoveFromQueueOutlined"
 
 import customTheme from "../components/theme"
 
@@ -54,12 +65,28 @@ const AdminComponent = () => (
     authProvider={authProvider}
   >
     <Resource
+      name="collections"
+      icon={LibraryBooksOutlinedIcon}
+      list={CollectionList}
+      show={CollectionShow}
+      create={CollectionCreate}
+      edit={CollectionEdit}
+    />
+    <Resource
       name="questions"
-      icon={FeaturedPlayListOutlinedIcon}
+      icon={RemoveFromQueueOutlinedIcon}
       list={QuestionList}
       show={QuestionShow}
       create={QuestionCreate}
       edit={QuestionEdit}
+    />
+    <Resource
+      name="answers"
+      icon={FeaturedPlayListOutlinedIcon}
+      list={AnswerList}
+      show={AnswerShow}
+      create={AnswerCreate}
+      edit={AnswerEdit}
     />
   </Admin>
 )
